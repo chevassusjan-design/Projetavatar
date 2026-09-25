@@ -1,0 +1,193 @@
+:root {
+  --bg: #141414;
+  --surface: #1f1f1f;
+  --text: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #e0483e;
+  --accent-active: #ff5c50;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+}
+
+.app-header {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recorder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0;
+}
+
+.record-btn {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.record-btn:active {
+  transform: scale(0.95);
+}
+
+.record-btn .dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: border-radius 0.2s ease, background 0.2s ease;
+}
+
+.record-btn.recording .dot {
+  border-radius: 6px;
+  background: var(--accent-active);
+}
+
+.record-btn.recording {
+  border-color: var(--accent-active);
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 92, 80, 0.4); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 92, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 92, 80, 0); }
+}
+
+.status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.live-transcript {
+  margin: 0;
+  min-height: 1.2em;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 0 8px;
+}
+
+.entries h2 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.day-group h3 {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.entry-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.entry-time {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.entry-transcript {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  white-space: pre-wrap;
+}
+
+.entry-transcript.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+audio {
+  width: 100%;
+  height: 32px;
+}
+
+.entry-actions {
+  margin-top: 8px;
+  text-align: right;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.delete-btn:hover {
+  color: var(--accent-active);
+}
+
+.empty-state {
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
