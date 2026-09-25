@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Journal vocal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#141414" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Journal vocal</h1>
+    <p class="subtitle">Un enregistrement par jour, transcrit automatiquement.</p>
+  </header>
+
+  <main>
+    <section class="recorder">
+      <button id="recordBtn" class="record-btn" aria-label="Démarrer l'enregistrement">
+        <span class="dot"></span>
+      </button>
+      <p id="status" class="status">Appuie pour enregistrer</p>
+      <p id="liveTranscript" class="live-transcript" aria-live="polite"></p>
+    </section>
+
+    <section class="entries">
+      <h2>Historique</h2>
+      <div id="entriesList" class="entries-list">
+        <p class="empty-state">Aucun enregistrement pour l'instant.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
