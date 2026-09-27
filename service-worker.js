@@ -1,4 +1,4 @@
-const CACHE_NAME = "voice-journal-v2";
+const CACHE_NAME = "voice-journal-v3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -8,8 +8,11 @@ const ASSETS = [
   "./questions.js",
   "./journal.js",
   "./questionnaire.js",
+  "./amorces.js",
   "./app.js",
   "./manifest.json",
+  "./amorces-recoupement.json",
+  "./amorces-anodins.json",
 ];
 
 self.addEventListener("install", (event) => {

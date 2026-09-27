@@ -3,6 +3,7 @@
   const views = {
     journal: document.getElementById("view-journal"),
     questionnaire: document.getElementById("view-questionnaire"),
+    amorces: document.getElementById("view-amorces"),
   };
 
   tabBtns.forEach((btn) => {
@@ -25,6 +26,7 @@
 
     await Journal.init();
     await Questionnaire.init();
+    await Amorces.init();
 
     if (!navigator.mediaDevices || !window.MediaRecorder) {
       document.getElementById("status").textContent = "Ce navigateur ne supporte pas l'enregistrement audio.";

@@ -15,6 +15,7 @@
     <nav class="tabs">
       <button class="tab-btn active" data-tab="journal">Journal</button>
       <button class="tab-btn" data-tab="questionnaire">Questionnaire</button>
+      <button class="tab-btn" data-tab="amorces">Amorces</button>
     </nav>
   </header>
 
@@ -40,6 +41,40 @@
       <p id="questionnaireProgress" class="qn-progress"></p>
       <div id="questionnaireList" class="qn-list"></div>
     </section>
+
+    <section id="view-amorces" class="view" hidden>
+      <section class="amorce-personal">
+        <h2>Mots personnels</h2>
+        <div class="word-input-row">
+          <input type="text" id="personalWordInput" placeholder="Ajouter un mot personnel" />
+          <button id="addPersonalWordBtn">Ajouter</button>
+        </div>
+        <div id="personalWordsList" class="words-list">
+          <p class="empty-state">Aucun mot personnel ajouté.</p>
+        </div>
+      </section>
+
+      <section class="amorce-draw">
+        <button id="drawBtn" class="draw-btn">Nouvelle amorce</button>
+        <p id="amorceFamily" class="amorce-family"></p>
+        <p id="amorcePrompt" class="amorce-prompt"></p>
+
+        <div class="recorder">
+          <button id="amorceRecordBtn" class="record-btn" aria-label="Enregistrer une réponse" disabled>
+            <span class="dot"></span>
+          </button>
+          <p id="amorceStatus" class="status">Tire une amorce pour commencer</p>
+          <p id="amorceLiveTranscript" class="live-transcript" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="entries">
+        <h2>Historique</h2>
+        <div id="amorceHistory" class="entries-list">
+          <p class="empty-state">Aucune amorce enregistrée pour l'instant.</p>
+        </div>
+      </section>
+    </section>
   </main>
 
   <script src="db.js"></script>
@@ -47,6 +82,7 @@
   <script src="questions.js"></script>
   <script src="journal.js"></script>
   <script src="questionnaire.js"></script>
+  <script src="amorces.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
