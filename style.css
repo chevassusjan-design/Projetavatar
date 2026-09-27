@@ -43,6 +43,28 @@ body {
   font-size: 0.85rem;
 }
 
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tab-btn {
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
 main {
   flex: 1;
   display: flex;
@@ -51,6 +73,10 @@ main {
   max-width: 480px;
   width: 100%;
   margin: 0 auto;
+}
+
+.view[hidden] {
+  display: none;
 }
 
 .recorder {
@@ -190,4 +216,129 @@ audio {
   color: var(--muted);
   text-align: center;
   font-size: 0.9rem;
+}
+
+.qn-progress {
+  margin: 0 0 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.qn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+
+.chapter {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 4px 16px;
+}
+
+.chapter summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.chapter summary::-webkit-details-marker {
+  display: none;
+}
+
+.chapter-progress {
+  color: var(--muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+.q-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+.q-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.q-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--accent-active);
+  border: 1px solid var(--accent-active);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+
+.q-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.q-record-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  color: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.q-record-btn.recording {
+  border-color: var(--accent-active);
+  color: var(--accent-active);
+  animation: pulse 1.4s infinite;
+}
+
+.q-record-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.q-live-transcript {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.q-takes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.take {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.take-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 6px;
 }

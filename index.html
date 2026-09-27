@@ -12,25 +12,41 @@
   <header class="app-header">
     <h1>Journal vocal</h1>
     <p class="subtitle">Un enregistrement par jour, transcrit automatiquement.</p>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="journal">Journal</button>
+      <button class="tab-btn" data-tab="questionnaire">Questionnaire</button>
+    </nav>
   </header>
 
   <main>
-    <section class="recorder">
-      <button id="recordBtn" class="record-btn" aria-label="Démarrer l'enregistrement">
-        <span class="dot"></span>
-      </button>
-      <p id="status" class="status">Appuie pour enregistrer</p>
-      <p id="liveTranscript" class="live-transcript" aria-live="polite"></p>
+    <section id="view-journal" class="view">
+      <section class="recorder">
+        <button id="recordBtn" class="record-btn" aria-label="Démarrer l'enregistrement">
+          <span class="dot"></span>
+        </button>
+        <p id="status" class="status">Appuie pour enregistrer</p>
+        <p id="liveTranscript" class="live-transcript" aria-live="polite"></p>
+      </section>
+
+      <section class="entries">
+        <h2>Historique</h2>
+        <div id="entriesList" class="entries-list">
+          <p class="empty-state">Aucun enregistrement pour l'instant.</p>
+        </div>
+      </section>
     </section>
 
-    <section class="entries">
-      <h2>Historique</h2>
-      <div id="entriesList" class="entries-list">
-        <p class="empty-state">Aucun enregistrement pour l'instant.</p>
-      </div>
+    <section id="view-questionnaire" class="view" hidden>
+      <p id="questionnaireProgress" class="qn-progress"></p>
+      <div id="questionnaireList" class="qn-list"></div>
     </section>
   </main>
 
+  <script src="db.js"></script>
+  <script src="recorder.js"></script>
+  <script src="questions.js"></script>
+  <script src="journal.js"></script>
+  <script src="questionnaire.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

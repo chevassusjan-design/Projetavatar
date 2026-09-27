@@ -1,5 +1,16 @@
-const CACHE_NAME = "voice-journal-v1";
-const ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.json"];
+const CACHE_NAME = "voice-journal-v2";
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./db.js",
+  "./recorder.js",
+  "./questions.js",
+  "./journal.js",
+  "./questionnaire.js",
+  "./app.js",
+  "./manifest.json",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
