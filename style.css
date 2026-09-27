@@ -65,6 +65,20 @@ body {
   border-color: var(--accent);
 }
 
+.tab-btn.tutorial-highlight {
+  color: var(--text);
+  border-color: var(--accent-active);
+  position: relative;
+  z-index: 1001;
+  animation: tutorial-pulse 1.2s infinite;
+}
+
+@keyframes tutorial-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 92, 80, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 92, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 92, 80, 0); }
+}
+
 main {
   flex: 1;
   display: flex;
@@ -73,6 +87,12 @@ main {
   max-width: 480px;
   width: 100%;
   margin: 0 auto;
+}
+
+body.tutorial-active main {
+  opacity: 0.25;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .view[hidden] {
@@ -500,4 +520,38 @@ audio {
   align-self: center;
   margin-top: 8px;
   padding: 12px 28px;
+}
+
+.tutorial-bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--accent-active);
+  border-radius: 14px;
+  padding: 16px;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.tutorial-bar[hidden] {
+  display: none;
+}
+
+.tutorial-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.tutorial-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }

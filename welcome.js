@@ -59,6 +59,7 @@ const Welcome = (() => {
       // stockage indisponible (navigation privée, etc.) : tant pis, pas bloquant
     }
     hide();
+    Tutorial.start();
   }
 
   function hasSeenOnboarding() {

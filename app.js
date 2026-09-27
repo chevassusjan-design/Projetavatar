@@ -28,6 +28,7 @@
     await Journal.init();
     await Questionnaire.init();
     await Amorces.init();
+    Tutorial.init();
     Welcome.init();
 
     if (!navigator.mediaDevices || !window.MediaRecorder) {
