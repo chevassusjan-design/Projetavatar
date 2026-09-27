@@ -440,3 +440,64 @@ audio {
   font-size: 0.85rem;
   margin: 0 0 8px;
 }
+
+.settings-block {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.settings-block h2 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+.secondary-btn {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.welcome-overlay[hidden] {
+  display: none;
+}
+
+.welcome-card {
+  max-width: 480px;
+  width: 100%;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: auto;
+}
+
+.welcome-card p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.welcome-card .draw-btn {
+  align-self: center;
+  margin-top: 8px;
+  padding: 12px 28px;
+}

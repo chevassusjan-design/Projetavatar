@@ -1,4 +1,4 @@
-const CACHE_NAME = "voice-journal-v3";
+const CACHE_NAME = "voice-journal-v4";
 const ASSETS = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const ASSETS = [
   "./journal.js",
   "./questionnaire.js",
   "./amorces.js",
+  "./welcome.js",
   "./app.js",
   "./manifest.json",
   "./amorces-recoupement.json",
